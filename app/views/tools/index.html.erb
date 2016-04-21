@@ -1,0 +1,13 @@
+<h1>CP Hardware</h1>
+<table>
+  <% @tools.each do |tool| %>
+    <tr>
+      <td><%= link_to tool.name, tool_path(tool) %></td>
+      <td>Quantity: <%= tool.quantity %></td>
+      <td>Price:    <%= tool.price %></td>
+      <td><%= link_to "Delete this Tool", destroy_tool_path(tool), method: :delete %></td>
+    </tr>
+  <% end %>
+</table>
+<p></p>
+<%= link_to "Add a New Tool", new_tool_path %>
